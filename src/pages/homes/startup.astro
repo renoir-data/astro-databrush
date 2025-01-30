@@ -9,9 +9,6 @@ import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Brands from '~/components/widgets/Brands.astro';
-
-import { YouTube } from 'astro-embed';
 
 const metadata = {
   title: 'Startup Landing Page',
@@ -22,12 +19,12 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="Startup Web Demo"
+    tagline="Databrush"
     actions={[
       {
         variant: 'primary',
         target: '_blank',
-        text: 'Get templates',
+        text: 'Get Renoir',
         href: 'https://github.com/onwidget/astrowind',
         icon: 'tabler:download',
       },
@@ -35,16 +32,22 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Improve <span class="hidden sm:inline">the online presence of</span> your <span
+      <!-- Improve <span class="hidden sm:inline">the online presence of</span> your <span
         class="text-accent dark:text-white highlight">Startup</span
-      > with Astrowind templates
+      > with Astrowind templates -->
+      You need a <span class="text-accent dark:text-white highlight">Brush</span> to paint a <span
+        class="text-accent dark:text-white highlight">Data Masterpiece</span
+      >
     </Fragment>
 
     <Fragment slot="subtitle">
-      Step into the spotlight with <span class="font-semibold">Astrowind</span> templates, your pathway to fortifying your
-      startup's digital footprint, fostering credibility, and expanding your reach.
+      <!-- Step into the spotlight with <span class="font-semibold">Astrowind</span> templates, your pathway to fortifying your
+      startup's digital footprint, fostering credibility, and expanding your reach. -->
+      Create a <span class="font-semibold">Fast, Easy, Flexible and Efficient</span> Data Infrastructure that grows with
+      you thanks to <span class="font-semibold">Renoir</span>
     </Fragment>
 
+    <!-- 
     <Fragment slot="image">
       <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
       <style is:inline>
@@ -53,38 +56,41 @@ const metadata = {
           max-width: 100%;
         }
       </style>
-    </Fragment>
+    </Fragment> -->
   </Hero>
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <Features3
     title="About us"
-    subtitle="We believe in the magic of turning dreams into stunning realities. Founded by passionate developers with a shared vision, we set out to simplify the website creation process. Our templates bring together the innovation of Astro 5.0 and the versatility of Tailwind CSS, enabling you to express your unique brand identity like never before."
+    isBeforeContent = {true}
   >
+    <Fragment slot="subtitle">
+      Databrush is built on decades of expertise in designing distributed infrastructures for data analytics. Led by <span class="text-accent dark:text-white highlight">Davide, Luca, and Fabio</span>, and supported by <span class="text-accent dark:text-white highlight">Gianpaolo and Alessandro</span> from Politecnico di Milano it combines technological innovation and strategic vision to tackle the most complex challenges."
+    </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Features3>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="Discover the impressive impact of Astrowind"
-    subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
+    title="Renoir community in numbers"
+    subtitle="Is just the beginning but it keeps growing"
     stats={[
-      { title: 'Downloads', amount: '182K' },
-      { title: 'Websites Launched', amount: '87' },
-      { title: 'User Ratings', amount: '4.8' },
-      { title: 'Satisfied Clients', amount: '116K' },
+      { title: 'Place at ACM DEBS', amount: '1º' },
+      { title: 'Downloads', amount: '>1000' },
+      { title: 'GitHub Stars', amount: '69' },
+      { title: 'Research Papers', amount: '3' },
+
     ]}
   />
 
   <!-- Brands Widget ****************** -->
-
+<!-- 
   <Brands
     title="Partnerships & Collaborations"
-    subtitle="At Astrowind, we believe in the power of collaboration to drive innovation and create exceptional experiences."
     icons={[]}
     images={[
       {
@@ -125,31 +131,59 @@ const metadata = {
         alt: 'Yahoo',
       },
     ]}
-  />
+  >
+      <Fragment slot="subtitle">
+        At <span class="text-accent dark:text-white highlight">Databrush</span>, we believe that innovation isn't just about technology, it's also about collaboration
+      </Fragment>
+  </Brands> -->
 
   <!-- Features2 Widget ************** -->
 
   <Features2
     title="What services do we provide?"
-    subtitle="We offer a wide range of website templates that suit various industries and purposes such as business, portfolio, e-commerce, blog, etc."
+    subtitle="We offer companies the ability to exploit the full potential of their data"
     items={[
       {
-        title: 'Installation Instructions',
+        title: 'Renoir Platform',
         description:
-          'Offer clear instructions on how to download the purchased templates and install them on various website platforms or content management systems.',
+          'For companies that needs a powerfull and flexible platform to manage their data and analytics.',
         icon: 'flat-color-icons:document',
+        callToAction : {
+          target: '_blank',
+          text: 'Get Renoir',
+          href: ''
+        },
+        classes: {
+          panel: 'flex justify-between',
+        },
       },
       {
-        title: 'Demo and Previews',
+        title: 'Data Science',
         description:
-          'Provide interactive demos and previews that allow customers to see how their chosen template will look and function before making a purchase.',
+          'For companies that needs to extract value from their data and make data-driven decisions.',
         icon: 'flat-color-icons:template',
+        callToAction : {
+          target: '_blank',
+          text: 'Contact Us',
+          href: ''
+        },
+        classes: {
+          panel: 'flex justify-between',
+        },
       },
       {
-        title: 'Technical Support',
+        title: 'Renoir in Cloud ',
         description:
-          'Providing customer support for any technical issues related to the templates or their implementation.',
+          'For companies that needs to scale their data infrastructure and analytics.',
         icon: 'flat-color-icons:voice-presentation',
+        callToAction : {
+          target: '_blank',
+          text: 'Learn More',
+          href: ''
+        },
+        classes: {
+          panel: 'flex justify-between',
+        },
       },
     ]}
   >
@@ -162,41 +196,41 @@ const metadata = {
 
   <Features
     id="features"
-    title="Main features of our templates"
-    subtitle="Possess several key characteristics to effectively cater to the needs of startups and entrepreneurs."
+    title="Features of Renoir"
+    subtitle="Renoir has several features that make it a great choice for your company data infrastructure"
     columns={3}
     items={[
       {
-        title: 'Modern and Professional Design',
+        title: 'Design with the Latest Technologies',
         description:
-          'Have a contemporary design that reflects current design trends and gives a professional impression.',
+          'Built with Rust, ensuring high performance and reliability. Renoir is designed to perform even in the most critical tasks.',
         icon: 'tabler:artboard',
       },
       {
-        title: 'Responsive and Mobile-Friendly',
-        description: 'Adapt seamlessly to different screen sizes and devices to ensure a consistent experience.',
+        title: 'Streaming Real Time',
+        description: 'Design to handle real-time data streams, Renoir is the perfect choice for companies that need to process data when they are generated.',
         icon: 'tabler:picture-in-picture',
       },
       {
         title: 'Customizability',
         description:
-          'Easily customizable, allowing users to adapt the design, colors, typography, and content to match their brand identity.',
+          'Easily customizable to perform even the most complex tasks for every vertical scenario, making it the ultimate solution for your needs.',
         icon: 'tabler:adjustments-horizontal',
       },
       {
-        title: 'Fast Loading Times',
-        description: 'Optimized for speed to ensure a smooth user experience and favorable search engine rankings.',
+        title: 'Lighting Fast',
+        description: 'Optimized for speed and performance to ensure insights are delivered quickly and efficiently.',
         icon: 'tabler:rocket',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Easy to Use',
         description:
-          'Incorporate SEO best practices in template structure and code to improve visibility in search engine results.',
+          'Designed with user-friendliness in mind, thanks to its high-level API, Renoir is easy to use and integrate with your existing infrastructure.',
         icon: 'tabler:arrows-right-left',
       },
       {
-        title: 'Compatibility',
-        description: 'The templates work seamlessly across various content management systems and website builders.',
+        title: 'Open Source',
+        description: 'The engine of Renoir is open source, allowing the community to contribute and improve the platform.',
         icon: 'tabler:plug-connected',
       },
     ]}
