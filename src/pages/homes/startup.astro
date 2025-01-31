@@ -35,7 +35,7 @@ const metadata = {
         href: 'https://github.com/onwidget/astrowind',
         icon: 'tabler:download',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Learn more', href: '#features', variant: 'secondary' },
     ]}
   >
     <Fragment slot="title">
@@ -43,8 +43,8 @@ const metadata = {
         class="text-accent dark:text-white highlight">Startup</span
       > with Astrowind templates -->
       <div class="inset-0 bg-gradient-ellipse"></div>
-      You need a <span class="text-accent dark:text-white highlight">Brush</span> to paint a <span
-        class="text-accent dark:text-white highlight">Data Masterpiece</span
+      You need a <span class=" dark:text-white highlight">Brush</span> to paint a <span
+        class=" dark:text-white highlight">Data Masterpiece</span
       >
     </Fragment>
 
@@ -103,7 +103,7 @@ const metadata = {
       Databrush is built on decades of expertise in designing distributed infrastructures for data analytics. Led by <span class="text-accent dark:text-white highlight">Davide, Luca, and Fabio</span>, and supported by <span class="text-accent dark:text-white highlight">Gianpaolo and Alessandro</span> from Politecnico di Milano it combines technological innovation and strategic vision to tackle the most complex challenges."
     </Fragment>
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent "></div>
     </Fragment>
   </Features3>
 
@@ -372,15 +372,18 @@ const metadata = {
         type: 'text',
         name: 'name',
         label: 'Name',
+        placeholder: 'John Doe',
       },
       {
         type: 'email',
         name: 'email',
         label: 'Email',
+        placeholder: 'jonh.doe@mail.com'
       },
     ]}
     textarea={{
       label: 'Message',
+      placeholder: 'HI, I would like to know more about Renoir and how it can help my company.',
     }}
     disclaimer={{
       label:
@@ -400,7 +403,7 @@ const metadata = {
       {
         variant: 'primary',
         target: '_blank',
-        text: 'Get templates',
+        text: 'Get Renoir',
         href: 'https://github.com/deib-polimi/renoir',
         icon: 'tabler:download',
       },
