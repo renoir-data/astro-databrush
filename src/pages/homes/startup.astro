@@ -10,6 +10,13 @@ import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
+import ContactUs from '~/components/widgets/Contact.astro';
+
+import brush_small from '~/assets/images/brush/small.svg?raw';
+import brush_medium from '~/assets/images/brush/medium.svg?raw';
+import brush_large from '~/assets/images/brush/large.svg?raw';
+import brush_xlarge from '~/assets/images/brush/xlarge.svg?raw';
+
 const metadata = {
   title: 'Startup Landing Page',
 };
@@ -35,18 +42,45 @@ const metadata = {
       <!-- Improve <span class="hidden sm:inline">the online presence of</span> your <span
         class="text-accent dark:text-white highlight">Startup</span
       > with Astrowind templates -->
+      <div class="inset-0 bg-gradient-ellipse"></div>
       You need a <span class="text-accent dark:text-white highlight">Brush</span> to paint a <span
         class="text-accent dark:text-white highlight">Data Masterpiece</span
       >
     </Fragment>
 
     <Fragment slot="subtitle">
+
       <!-- Step into the spotlight with <span class="font-semibold">Astrowind</span> templates, your pathway to fortifying your
       startup's digital footprint, fostering credibility, and expanding your reach. -->
+      <!-- <div class="inset-0 bg-gradient-subslogan"></div> -->
       Create a <span class="font-semibold">Fast, Easy, Flexible and Efficient</span> Data Infrastructure that grows with
       you thanks to <span class="font-semibold">Renoir</span>
+      
     </Fragment>
 
+    <Fragment slot="bg">
+      <div class="absolute inset-0">
+        <!-- small -->
+        <div class="xs:hidden">
+          <Fragment set:html={brush_small} />
+        </div>
+        <!-- medium -->
+        <div class="hidden xs:max-lg:block pt-10">
+          <Fragment set:html={brush_medium} />
+        </div>
+      <div class="flex justify-center items-center overflow-hidden">
+        <div class="hidden lg:max-2xl:block pt-16">
+          <Fragment set:html={brush_large} />
+        </div>
+      </div>
+        <!-- large -->
+      </div>
+      <div class="flex justify-center items-center overflow-hidden -m-32">
+        <div class="hidden 2xl:block">
+          <Fragment set:html={brush_xlarge} />
+        </div>
+      </div>
+    </Fragment>
     <!-- 
     <Fragment slot="image">
       <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
@@ -279,7 +313,7 @@ const metadata = {
   </FAQs>
 
   <!-- Features3 Widget ************** -->
-
+<!-- 
   <Features3
     title="Let us know how we can help"
     subtitle="We're here to help and answer any question you might have."
@@ -326,7 +360,38 @@ const metadata = {
         },
       },
     ]}
+  /> -->
+
+
+  <ContactUs
+    id="form"
+    title="Drop us a message today!"
+    subtitle="Whether you have a question about features, trials, pricing, need a demo, or anything else, our team is ready to answer all your questions."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Our support team typically responds within 24 business hours."
+    button='Send Message'
+    method='post'
+    action="https://forms.un-static.com/forms/f92a74143ea36998a842bb838854714e148f4379"
   />
+
 
   <!-- CallToAction Widget *********** -->
 
@@ -336,7 +401,7 @@ const metadata = {
         variant: 'primary',
         target: '_blank',
         text: 'Get templates',
-        href: 'https://github.com/onwidget/astrowind',
+        href: 'https://github.com/deib-polimi/renoir',
         icon: 'tabler:download',
       },
     ]}
@@ -344,8 +409,8 @@ const metadata = {
     <Fragment slot="title">Be a part of our vision</Fragment>
 
     <Fragment slot="subtitle">
-      Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful
-      impact.
+      <!-- Join the <span class="font-semibold">Astrowind</span> community and start building your online presence today. -->
+      Join the <span class="font-semibold">Renoir</span> community and start building your data infrastructure today.
     </Fragment>
   </CallToAction>
 </Layout>
