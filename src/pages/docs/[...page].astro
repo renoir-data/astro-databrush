@@ -1,0 +1,39 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render, type CollectionEntry } from 'astro:content';
+import SideNavMenu from '~/components/docs/SideNavMenu.astro';
+import TableofContent from '~/components/docs/TableofContent.astro';
+import type { Heading, MenuItem } from '~/doc_types';
+import PageLayout from '~/layouts/PageLayout.astro';
+import { fetchBook, getStaticPathsDocs } from '~/utils/docs';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  return await getStaticPathsDocs();
+}) satisfies GetStaticPaths;
+
+const { entry, headings, page } = Astro.props as {
+  entry: CollectionEntry<'docs'>;
+  headings: Heading[];
+  page: string;
+};
+
+const [ book ] = page.split('/');
+const { Content } = await render(entry);
+const menu: MenuItem[] = await fetchBook(book);
+---
+
+<PageLayout>
+  <div class="flex flex-row flex-1 overflow-y-visible relative items-start">
+    <div class="sticky top-[110px] m-8 w-1/4">
+      <SideNavMenu items={menu} />
+    </div>
+    <div class="mx-auto px-6 sm:px-6 max-w-3xl prose dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0">
+      <Content />
+    </div>
+    <div class="sticky top-[110px] m-8 w-1/4">
+      <TableofContent {headings} />
+    </div>
+  </div>
+</PageLayout>
