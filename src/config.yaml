@@ -63,6 +63,9 @@ apps:
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
+  docs:
+    pathname: 'docs'
+
 analytics:
   vendors:
     googleAnalytics:

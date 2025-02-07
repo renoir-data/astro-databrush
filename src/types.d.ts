@@ -44,6 +44,41 @@ export interface Post {
   readingTime?: number;
 }
 
+export interface DocumentationPage {
+  id: string,
+  slug: string,
+  permalink: string,
+  order: number,
+
+  title: string,
+  date?: Date,
+  description?: string,
+
+  Content?: AstroComponentFactory;
+  content?: string;
+
+  readingTime?: number;
+}
+
+export interface Documentation {
+  name: string,
+  chapters: DocumentationChapters[],
+  permalink: string
+}
+
+export interface DocumentationChapters {
+  title: string;
+  order: number;
+  children: DocumentationPagee[];
+  permalink: string;
+}
+
+export interface DocumentationPagee {
+  title: string,
+  order: number,
+  permalink: string,
+}
+
 export interface Taxonomy {
   slug: string;
   title: string;
