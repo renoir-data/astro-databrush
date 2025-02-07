@@ -139,6 +139,7 @@ export interface Item {
   classes?: Record<string, string>;
   callToAction?: CallToAction;
   image?: Image;
+  data?: Record<string, string>;
 }
 
 export interface Price {
@@ -186,6 +187,7 @@ export interface CallToAction extends Omit<HTMLAttributes<'a'>, 'slot'> {
   text?: string;
   icon?: string;
   classes?: Record<string, string>;
+  disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
 }
 
@@ -210,6 +212,8 @@ export interface Form {
   disclaimer?: Disclaimer;
   button?: string;
   description?: string;
+  method?: string;
+  action?: string;
 }
 
 // WIDGETS
